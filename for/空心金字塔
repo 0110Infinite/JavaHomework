@@ -1,0 +1,22 @@
+public class Main{
+    public static void main(String[] args) {
+        int n = 5; // 金字塔的高度设置为5层
+        for (int i = 0; i < n; i++) { // 外层循环，每次迭代代表金字塔的一层
+            for (int j = 0; j < n * 2 - 1; j++) {// 内层循环，每次迭代在控制台上打印一个字符（星号或空格）
+                // 条件判断，用于决定打印星号还是空格
+                // 当前行的中央点为 n - 1，所以中央点左右对称的两点满足 j + i == n - 1 或 j - i == n - 1
+                if (j + i == n - 1 || j - i == n - 1) {
+                    // 打印星号，构成金字塔的左边和右边
+                    System.out.print("*");
+                } else if (i == n - 1) {
+                    // 最底层的情况，整行都打印星号
+                    System.out.print("*");
+                } else {
+                    // 如果不是星号的位置，那么打印空格
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
