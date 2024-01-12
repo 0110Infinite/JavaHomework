@@ -1,0 +1,18 @@
+public class Main{
+    public static void main(String[] args) {
+        int n = 5; // 金字塔的高度设置为5层
+        for (int i = 0; i < n; i++) { // 外层循环，每次迭代代表金字塔的一层
+            for (int j = 0; j < n * 2 - 1; j++) {// 内层循环，每次迭代在控制台上打印一个字符（星号或空格）
+                // 判断条件：如果当前位置应该打印星号(数学方法)
+                // j + i >= n - 1 确保星号从中间开始向右打印
+                // j - i <= n - 1 确保星号不超过中间向左打印
+                if (j + i >= n - 1 && j - i <= n - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
